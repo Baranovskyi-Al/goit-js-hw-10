@@ -39,10 +39,10 @@ function onCountryInput() {
 
       if (country.length === 1) {
         countryInfo.insertAdjacentHTML('beforeend', markupCountryInfo(country));
-      } else if (1 < country.length <= 10) {
-        countryList.insertAdjacentHTML('beforeend', markupCountryList(country));
-      } else {
+      } else if (country.length >= 10) {
         ifTooManyMatchesAlert();
+      } else {
+        countryList.insertAdjacentHTML('beforeend', markupCountryList(country));
       }
     })
     //   Ловим ошибку при вводе
